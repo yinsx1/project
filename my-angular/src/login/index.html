@@ -1,0 +1,99 @@
+<nz-layout class="container">
+    <nz-header class="header">
+        <div>慕课答疑平台</div>
+        <div>
+            <ul>
+                <li>我要求助</li>
+                <li>登录</li>
+                <li>注册</li>
+            </ul>
+        </div>
+    </nz-header>
+    <nz-layout>
+        <div class="content-top">
+            <h1>慕课答疑平台</h1>
+        </div>
+        <nz-content>
+            <div class="content">
+                <div class="form">
+                    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+                        <nz-form-item>
+                            <nz-form-control>
+                                <nz-input-group nzPrefixIcon="anticon anticon-user">
+                                <input type="text" nz-input formControlName="userName" placeholder="Username">
+                                </nz-input-group>
+                                <nz-form-explain *ngIf="validateForm.get('userName').dirty && validateForm.get('userName').errors">Please input your username!</nz-form-explain>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item>
+                            <nz-form-control>
+                                <nz-input-group nzPrefixIcon="anticon anticon-lock">
+                                <input type="password" nz-input formControlName="password" placeholder="Password">
+                                </nz-input-group>
+                                <nz-form-explain *ngIf="validateForm.get('password').dirty && validateForm.get('password').errors">Please input your Password!</nz-form-explain>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item>
+                            <nz-form-control>
+                                <label nz-checkbox formControlName="remember">
+                                <span>Remember me</span>
+                                </label>
+                                <a class="login-form-forgot" class="login-form-forgot">Forgot password</a>
+                                <button nz-button class="login-form-button" [nzType]="'primary'">Log in</button>
+                                Or
+                                <a href="">register now!</a>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </form>
+                </div>
+            </div>
+        </nz-content>
+    </nz-layout>
+    <nz-footer class="content-foot">
+        <div class="foot-header">
+            <div class="left">
+                <h3>慕课答疑平台</h3>
+                <p>本项目为(慕课答疑平台)，nzUI框架，采用angualr技术</p>
+            </div>
+            <div class="right">
+                <div class="item">
+                    <h4>关于</h4>
+                    <ul>
+                        <li><a>关于我们</a></li>
+                        <li><a>广告合作</a></li>
+                        <li><a>友情链接</a></li>
+                        <li><a>招聘</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a>新浪微博</a></li>
+                        <li><a>电子邮件</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>旗下网站</h4>
+                    <ul>
+                        <li><a>Laravel中文网</a></li>
+                        <li><a>Ghost中国</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>赞助商</h4>
+                    <ul>
+                        <li><a>又拍云</a></li>
+                        <li><a>小隐</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="foot-bottom">
+            <ul>
+                <li><a>京ICP备11008151号</a></li>
+                <li>京公网安备11010802014853</li>
+            </ul>
+        </div>
+    </nz-footer>
+</nz-layout>
